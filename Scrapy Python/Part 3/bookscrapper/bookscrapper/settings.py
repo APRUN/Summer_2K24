@@ -12,6 +12,10 @@ BOT_NAME = "bookscrapper"
 SPIDER_MODULES = ["bookscrapper.spiders"]
 NEWSPIDER_MODULE = "bookscrapper.spiders"
 
+# We can also write this in our spider file(written in comment)
+# FEEDS={
+#     'booksdata.json':{'format':'json'}
+# }
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = "bookscrapper (+http://www.yourdomain.com)"
@@ -62,9 +66,9 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    "bookscrapper.pipelines.BookscrapperPipeline": 300,
-#}
+ITEM_PIPELINES = {
+   "bookscrapper.pipelines.BookscrapperPipeline": 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
